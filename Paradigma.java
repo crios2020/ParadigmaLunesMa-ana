@@ -8,11 +8,22 @@ class Auto{
 	int velocidad;
 	
 	//métodos
-	public void acelerar(){
+	void acelerar(){
 		velocidad=velocidad+10;
+		if(velocidad>100){
+			velocidad=100;
+		}
 	}
 	
-	public void frenar(){
+	void acelerar(int kilometros){
+		velocidad=velocidad+kilometros;
+		if(velocidad>100){
+			velocidad=100;
+		}
+	}
+	
+	
+	void frenar(){
 		velocidad=velocidad-10;
 	}
 	
@@ -34,8 +45,38 @@ public class Paradigma{
 		auto1.acelerar();					// 20
 		auto1.acelerar();					// 30
 		auto1.frenar();						// 20
+		auto1.acelerar(15);					// 35
 		
 		System.out.println(auto1.marca+" "+auto1.modelo+" "
 							+auto1.color+" "+auto1.velocidad);
 	}
 }
+
+
+class Cuenta{
+	int nro;
+	float saldo;
+	void depositar(){}
+	void debitar() {}
+}
+
+class Cliente{
+	int nro;					// 1
+	String nombre;				// Juan Perez
+	int edad;					// 38
+	Cuenta cuenta;					
+}
+
+class ProductoHelado{
+	Cucurucho cucurucho;
+	Gusto gusto1;
+	Gusto gusto2;
+	Cuchara cucharita;
+	float precio;
+}
+
+class Cucurucho{}
+class Gusto{}
+class Cuchara{}
+
+
