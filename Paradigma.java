@@ -1,3 +1,10 @@
+import javax.swing.JOptionPane;
+
+class Motor{
+	int potencia;
+	int peso;
+}
+
 // declaración de clases
 class Auto{
 	
@@ -6,25 +13,49 @@ class Auto{
 	String modelo;
 	String color;
 	int velocidad;
+	Motor motor;
 	
 	//métodos
-	void acelerar(){
-		velocidad=velocidad+10;
-		if(velocidad>100){
-			velocidad=100;
-		}
+	void acelerar(){									//acelerar
+		//velocidad=velocidad+10;
+		//if(velocidad>100){
+		//	velocidad=100;
+		//}
+		acelerar(10);						//llamado a método de la misma clase
 	}
 	
-	void acelerar(int kilometros){
+	//método sobrecargado
+	void acelerar(int kilometros){						//acelerarInt
 		velocidad=velocidad+kilometros;
 		if(velocidad>100){
 			velocidad=100;
 		}
 	}
 	
+	void acelerar(int kms, int r){						//acelerarIntInt
+	}
+	
+	void acelerar(int km, boolean tieneNitro){			//acelerarIntBoolean
+		if(tieneNitro == false){
+			acelerar(km);				//llamado a método de la misma clase
+		} else{
+			acelerar(km*2);				//llamado a método de la misma clase
+		}
+	}
+	
+	void acelerar(boolean tieneNitro, int kms){			//acelerarBooleanInt
+	}
 	
 	void frenar(){
 		velocidad=velocidad-10;
+	}
+	
+	void imprimirVelocidad(){
+		System.out.println(velocidad);
+	}
+	
+	int obtenerVelocidad(){			//getVelocidad()
+		return velocidad;
 	}
 	
 }// end class
@@ -49,6 +80,12 @@ public class Paradigma{
 		
 		System.out.println(auto1.marca+" "+auto1.modelo+" "
 							+auto1.color+" "+auto1.velocidad);
+		
+		auto1.imprimirVelocidad();
+		System.out.println(auto1.obtenerVelocidad());
+		
+		JOptionPane.showMessageDialog(null,"Velocidad: "+auto1.obtenerVelocidad());
+							
 	}
 }
 
@@ -78,5 +115,32 @@ class ProductoHelado{
 class Cucurucho{}
 class Gusto{}
 class Cuchara{}
+
+
+class Negocio{
+	
+	void vender(String nombre, String apellido, float dineroEfectivo){
+		
+		print(ticket);
+	}
+	
+	void vender(String nombre, String apellido, int telefono, long nroTarjeta){
+		
+		print(ticket);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
