@@ -4,16 +4,16 @@ class Cuenta{
 	private float saldo;
 	
 	//método constructor
-	Cuenta(int nro,String moneda){
+	public Cuenta(int nro,String moneda){
 		this.nro=nro;
 		this.moneda=moneda;
 	}
 	
-	void depositar(float monto){
+	public void depositar(float monto){
 		saldo=saldo+monto;
 	}
 	
-	void debitar(float monto){
+	public void debitar(float monto){
 		if(saldo>=monto){
 			saldo-=monto;
 		}else{
@@ -68,8 +68,10 @@ public class Paradigma2{
 		
 		System.out.println(cliente1.getEstado());
 		
-		cuenta1.saldo=10000000;
-		System.out.println(cuenta1.saldo);
+		//cuenta1.saldo=10000000;
+		//System.out.println(cuenta1.saldo);
+		
+		//Cuenta cuenta3=new Cuenta();
 		
 	}
 }

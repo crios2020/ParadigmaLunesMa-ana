@@ -15,6 +15,14 @@ class Auto{
 	int velocidad;
 	Motor motor;
 	
+	Auto(){}
+	
+	Auto(String marca, String modelo, String color){
+		this.marca=marca;
+		this.modelo=modelo;
+		this.color=color;
+	}
+	
 	//métodos
 	void acelerar(){									//acelerar
 		//velocidad=velocidad+10;
@@ -85,7 +93,9 @@ public class Paradigma{
 		System.out.println(auto1.obtenerVelocidad());
 		
 		JOptionPane.showMessageDialog(null,"Velocidad: "+auto1.obtenerVelocidad());
-							
+				
+		Auto auto2=new Auto("Renault","Kangoo","Bordo");	
+				
 	}
 }
 
@@ -121,12 +131,12 @@ class Negocio{
 	
 	void vender(String nombre, String apellido, float dineroEfectivo){
 		
-		print(ticket);
+		//print(ticket);
 	}
 	
 	void vender(String nombre, String apellido, int telefono, long nroTarjeta){
 		
-		print(ticket);
+		//print(ticket);
 	}
 	
 }
